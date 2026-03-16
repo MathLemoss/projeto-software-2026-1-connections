@@ -62,7 +62,7 @@ jobs:
             docker run -d \
               -p 8080:8080 \
               -e REDIS_URL=redis \
-              -e MONGO_URL=mongo-teste \
+              -e MONGO_URL=${{ secrets.MONGO_URL }} \
               -e USER_URL=http://users:5000 \
               --network=rede \
               --name ${{ env.CONTAINER_NAME }} \
